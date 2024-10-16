@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
-    <title>Joso da memória</title>
-</head>
-<body>
+    <title>Jogo da memória</title>
+  </head>
+  <body>
     <div class="app">
-        <h1>JOGO DA MEMÓRIA</h1>
-        
-        <div class="cards-container">
+      <h1>JOGO DA MEMÓRIA</h1>
 
+      <div class="cards-container">
+        <div class="card" id="card" onclick="flip()">
+          <div class="card-inner" id="cardInner">
+            <div class="card-front">?</div>
+            <div class="card-back"><p>❤️</p></div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
