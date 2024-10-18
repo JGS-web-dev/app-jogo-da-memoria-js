@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   emojisArr.forEach((element) => {
     createDynamicCards(element);
   });
-  playConuter.textContent = `Played: ${countPlays}`;
+  playConuter.textContent = `number of movements: ${countPlays}`;
   scoreBoard.appendChild(playConuter);
 });
 
@@ -38,7 +38,7 @@ function flip(event, element) {
 
     // Atualiza o texto na tela
     const playCounter = document.getElementById("playCounter");
-    playCounter.textContent = `Played: ${countPlays}`;
+    playCounter.textContent = `number of movements: ${countPlays}`;
   }
 
   if (countCards.length < 2) {
@@ -120,5 +120,5 @@ function reload() {
   }
     // atualiza as jogdas na tela
     const playCounter = document.getElementById("playCounter");
-    playCounter.textContent = `Played: ${countPlays}`;
+    playCounter.textContent = `number of movements: ${countPlays}`;
 }

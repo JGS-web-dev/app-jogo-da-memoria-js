@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    color: #31363F;
 }
 
 .app {
@@ -10,31 +11,42 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: #393646;
     height: 100vh;
     width: 100vw;
+
+    background-color: #EEEEEE;
 }
 
 .app h1 {
     text-align: center;
-    color: #F4EEE0;
     font-weight: bolder;
     padding: 16px 0;
 }
 
 .scoreBoard {
     margin-bottom: 16px;
+    width: 98%;
+    padding: 16px 0;
+    box-shadow: 0px 0px 25px 2px rgba(34, 40, 49, 0.218);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .scoreBoard button {
     border-radius: 8px;
-    font-size: 48px;
     padding: 0 8px;
     border: 0;
     outline: 0;
 
-    background-color: #F4EEE0;
-    color: #393646;
+}
+
+.scoreBoard p {
+    font-weight: 500;
+    font-size: 26px;
+    
 }
 
 .cards-container {
@@ -91,21 +103,22 @@
     z-index: 2;
 
     font-size: 84px;
-    color: #6D5D6E;
+    color: #EEEEEE;
 
-    background-color: #F4EEE0;
-    border: 2px solid #6D5D6E;
+    background-color: #76ABAE;
+    border: 2px solid #31363F;
     border-radius: 6px;
-
+    
 }
 
 .card-back {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: #F4EEE0;
-    border: 2px solid #6D5D6E;
+    
+    
+    background-color: #76ABAE;
+    border: 2px solid #31363F;
     border-radius: 6px;
 
 
