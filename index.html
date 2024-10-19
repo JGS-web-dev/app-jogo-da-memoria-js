@@ -8,13 +8,32 @@
     <title>Jogo da memória</title>
   </head>
   <body>
+    <audio id="flipAudio">
+      <source src="./audios/flip.wav" type="audio/wav">
+    </audio>
+    <audio id="winAudio">
+      <source src="./audios/win.wav" type="audio/wav">
+    </audio>
+    <audio id="failAudio">
+      <source src="./audios/fail.wav" type="audio/wav">
+    </audio>
+    <audio id="victoryAudio" >
+      <source src="./audios/victory.wav" type="audio/wav">
+    </audio>
+
     <div class="app">
       <h1>JOGO DA MEMÓRIA</h1>
       <div class="scoreBoard" id="scoreBoard">
-        <button onclick="reload()"><p>↻ restart</p></button>
+        <button class="reloadBtn" onclick="reload()"><p>↻ restart</p></button>
       </div>
       <div class="cards-container" id="cardContainer">
         
+      </div>
+      <div id="modalHero" class="modalHero none" onclick="closeModal()">
+        <div class="modal">
+          <p>Congratulations! You've won!</p>
+          <button class="reloadBtn" onclick="reload()"><p>↻ restart</p></button>
+        </div>
       </div>
     </div>
   </body>

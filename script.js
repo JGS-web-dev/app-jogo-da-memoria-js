@@ -9,6 +9,8 @@ const emojisArr = [
 var countCards = [];
 var countPlays = 0;
 var isFlipping = false;
+var pairs = 0;
+var isModalOpen = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   const scoreBoard = document.querySelector(".scoreBoard");
@@ -24,14 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function flip(event, element) {
   let card = event.target.closest(".card");
-
+  const flipAudio = document.getElementById("flipAudio");
+  const winAudio = document.getElementById("winAudio");
+  const failAudio = document.getElementById("failAudio");
+  const victoryAudio = document.getElementById("victoryAudio");
+  
   if(isFlipping) {
 
-  // se isFlipping retorna imediatamente para que n possa virar outras
+    // se isFlipping retorna imediatamente para que n possa virar outras
     console.log("Flipping is already in progress.");
     return;
   }
 
+  // seta o tempo do audio para 0
+  flipAudio.currentTime = 0;
+  // toca o audio de virar carta
+  flipAudio.play();
   // verifica se já foi virada duas cartas
   if (countCards.length == 1) {
     countPlays += 1; // Incrementa o número de jogadas
@@ -56,15 +66,30 @@ function flip(event, element) {
 
       setTimeout(() => {
         if (countCards[0].content === countCards[1].content) {
+          winAudio.currentTime = 0;
+          winAudio.play();
+          pairs = pairs + 1;
           card1.classList.add("fade-out");
           card2.classList.add("fade-out");
 
           setTimeout(() => {
             card1.classList.add("none");
             card2.classList.add("none");
+            console.log("oi")
+            if(pairs === emojisArr.length / 2) {
+              victoryAudio.currentTime = 0;
+              victoryAudio.play();
+              const modal = document.getElementById('modalHero');
+
+              modal.classList.remove("none");
+            }
           }, 740);
           countCards = [];
+
+
         } else {
+          failAudio.currentTime = 0;
+          failAudio.play();
           card1.classList.remove("flipped");
           card2.classList.remove("flipped");
         }
@@ -107,6 +132,7 @@ function ArrayRandomizer(array) {
 function reload() {
   const cardContainer = document.getElementById("cardContainer");
   countPlays = 0;
+  pairs= 0;
   if (cardContainer) {
 
     // limpa o cardContainer para dar espaço para a nova geração
@@ -121,4 +147,9 @@ function reload() {
     // atualiza as jogdas na tela
     const playCounter = document.getElementById("playCounter");
     playCounter.textContent = `number of movements: ${countPlays}`;
+}
+
+function closeModal() {
+    const modal = document.getElementById('modalHero');
+    modal.classList.add("none");
 }
