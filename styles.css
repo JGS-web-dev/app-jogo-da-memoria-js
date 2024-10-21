@@ -184,3 +184,20 @@
     align-items: center;
     gap: 16px;
 }
+
+
+@media  screen and (max-width: 1024px) {
+    .scoreBoard {
+        width: 98%;
+        margin: 2%;
+    }
+
+    .scoreBoard p {
+        font-size: 16px;
+    }
+
+    .cards-container {
+        width: 100%;
+        justify-content: center;
+    }
+}
